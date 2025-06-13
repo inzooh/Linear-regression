@@ -1,0 +1,32 @@
+print("\n--- Problem 5: Visitors & New Menus vs. Sales ---")
+
+# Data from the problem
+# X_1 (Pengunjung), X_2 (Menu Baru) are independent variables 
+X_5 = np.array([
+    [50, 2],
+    [60, 3],
+    [70, 4],
+    [80, 5],
+    [90, 6]
+])
+y_5 = np.array([400, 480, 560, 640, 720])  # Y (Penjualan) 
+
+# Create a linear regression model
+model_5 = LinearRegression()
+
+# Train the model
+model_5.fit(X_5, y_5)
+
+# Get the coefficients (b1, b2) and intercept (a)
+a_5 = model_5.intercept_
+b_5_1 = model_5.coef_[0]
+b_5_2 = model_5.coef_[1]
+
+print(f"Model Regresi Linear Berganda: Y = {a_5:.2f} + {b_5_1:.2f}X_1 + {b_5_2:.2f}X_2") # 
+
+# Predict sales if pengunjung = 75 and menu baru = 4
+X_new_5 = np.array([[75, 4]]) # 
+predicted_sales = model_5.predict(X_new_5)
+
+print(f"Prediksi penjualan jika pengunjung = 75 dan menu baru = 4: {predicted_sales[0]:.2f} ribu rupiah")
+print("-" * 60)
