@@ -1,0 +1,27 @@
+import numpy as np
+from sklearn.linear_model import LinearRegression
+
+print("--- Problem 1: Customer Count vs. Revenue ---")
+
+# Data from the problem
+X = np.array([10, 20, 30, 40, 50]).reshape(-1, 1)  # Jumlah Pelanggan (X) 
+y = np.array([200, 400, 600, 800, 1000])  # Pendapatan (Y) dalam ribu rupiah 
+
+# Create a linear regression model
+model_1 = LinearRegression()
+
+# Train the model
+model_1.fit(X, y)
+
+# Get the coefficients (b) and intercept (a)
+b_1 = model_1.coef_[0]
+a_1 = model_1.intercept_
+
+print(f"Model Regresi Linear Sederhana: Y = {a_1:.2f} + {b_1:.2f}X")
+
+# Predict revenue for 35 customers
+X_new_1 = np.array([[35]]) # 
+predicted_revenue = model_1.predict(X_new_1)
+
+print(f"Prediksi pendapatan jika pelanggan berjumlah 35 orang: {predicted_revenue[0]:.2f} ribu rupiah")
+print("-" * 60)
