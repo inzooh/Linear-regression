@@ -1,0 +1,17 @@
+print("\n--- Problem 2: Study Time vs. Exam Score ---")
+
+# Data from the problem
+X_2 = np.array([1, 2, 3, 4]).reshape(-1, 1)  # Waktu Belajar (jam) 
+y_2 = np.array([60, 65, 70, 75])  # Nilai Ujian 
+
+# Create a linear regression model
+model_2 = LinearRegression()
+
+# Train the model
+model_2.fit(X_2, y_2)
+
+# Get the coefficient (slope)
+b_2 = model_2.coef_[0]
+
+print(f"Rata-rata peningkatan nilai untuk setiap jam belajar (koefisien b): {b_2:.2f}")
+print("-" * 60)
