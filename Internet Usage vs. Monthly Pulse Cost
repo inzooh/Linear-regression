@@ -1,0 +1,18 @@
+print("\n--- Problem 4: Internet Usage vs. Monthly Pulse Cost ---")
+
+# Data from the problem
+X_4 = np.array([5, 10, 15, 20]).reshape(-1, 1)  # Jam Internet (X) 
+y_4 = np.array([25000, 50000, 75000, 100000])  # Biaya Pulsa (Y) 
+
+# Create a linear regression model
+model_4 = LinearRegression()
+
+# Train the model
+model_4.fit(X_4, y_4)
+
+# Predict pulse cost for 18 hours of internet usage
+X_new_4 = np.array([[18]]) # 
+predicted_cost = model_4.predict(X_new_4)
+
+print(f"Prediksi biaya pulsa untuk 18 jam penggunaan internet: {predicted_cost[0]:.2f}")
+print("-" * 60)
